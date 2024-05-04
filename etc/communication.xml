@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Communication/etc/communication.xsd">
+  <!-- This file is part of the Magento 2 framework and is used to define communication topics. -->
+
+  <!-- This section defines a communication topic named "test.product.save".
+       A topic is a named channel or event that can be used to send and receive messages.
+       In this case, the "test.product.save" topic is used to communicate information about saving a product. -->
+  <topic name="test.product.save" request="string" />
+  <!-- The "request" attribute specifies the data type of the message payload that will be sent through this topic. -->
+</config>

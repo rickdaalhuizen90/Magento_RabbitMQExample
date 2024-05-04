@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/consumer.xsd">
+    <!-- This file is used to define message queue consumers in Magento 2.
+         Consumers are responsible for processing messages from the message queue. -->
+
+    <!-- This consumer listens to the "test_product_save_queue_one" queue and uses the
+         "Rick\RabbitMQExample\MessageQueue\ConsumerOne::process" method to handle the messages. -->
+    <consumer name="test_consumer_one" queue="test_product_save_queue_one" connection="amqp" handler="Rick\RabbitMQExample\MessageQueue\ConsumerOne::process"/>
+
+    <!-- This consumer listens to the "test_product_save_queue_two" queue and uses the
+         "Rick\RabbitMQExample\MessageQueue\ConsumerTwo::process" method to handle the messages. -->
+    <consumer name="test_consumer_two" queue="test_product_save_queue_two" connection="amqp" handler="Rick\RabbitMQExample\MessageQueue\ConsumerTwo::process"/>
+</config>

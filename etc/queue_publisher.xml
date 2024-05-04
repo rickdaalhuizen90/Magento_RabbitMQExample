@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/publisher.xsd">
+    <!-- This file is used to define message queue publishers in Magento 2.
+         Publishers are responsible for sending messages to the message queue. -->
+
+    <!-- This publisher sends messages to the "test.product.save" topic.
+         The messages will be published to the "test.product.save.exchange" exchange
+         using the "amqp" connection. -->
+    <publisher topic="test.product.save">
+        <connection name="amqp" exchange="test.product.save.exchange" />
+    </publisher>
+</config>

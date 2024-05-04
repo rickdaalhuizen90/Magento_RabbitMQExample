@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue_topology.xsd">
+    <!-- This file is used to define the message queue topology in Magento 2.
+         The topology describes how messages are routed through the message queue system. -->
+
+    <!-- This section defines an exchange named "test.product.save.exchange" of type "topic".
+         The exchange is connected to the "amqp" connection, which is likely a RabbitMQ connection.
+         You can also use the "db" connection to connect to a database-based message queue. -->
+    <exchange name="test.product.save.exchange" type="topic" connection="amqp">
+        <!-- This binding routes messages from the "test.product.save" topic to the "test_product_save_queue_one" queue. -->
+        <binding id="TestProductSaveBindingOne" topic="test.product.save" destinationType="queue" destination="test_product_save_queue_one"/>
+
+        <!-- This binding routes messages from the "test.product.save" topic to the "test_product_save_queue_two" queue. -->
+        <binding id="TestProductSaveBindingTwo" topic="test.product.save" destinationType="queue" destination="test_product_save_queue_two"/>
+    </exchange>
+</config>
